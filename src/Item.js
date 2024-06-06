@@ -29,6 +29,7 @@ export default class Item {
         addButton.classList.add('button-38');
         itemContainer.appendChild(addButton);
 
+
         return itemContainer;
     }
 }

@@ -1,6 +1,7 @@
 import Logo from "./images/logo.png";
 import homePage from "./homePage";
 import menuPage from "./menuPage";
+import contactPage from "./contact";
 
 function header() {
     const content = document.querySelector('#content');
@@ -74,6 +75,10 @@ function header() {
     menu.addEventListener('click', () => {
         removeDOM();
         menuPage();
+    });
+    contact.addEventListener('click', () => {
+        removeDOM();
+        contactPage();
     });
 }
 

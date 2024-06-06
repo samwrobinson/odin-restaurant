@@ -146,7 +146,7 @@ nav {
     justify-content: space-between;
     text-align: center;
     padding: 5% 0;
-    height: 18%;
+    height: auto;
 }
 .photo-container img {
     height: auto;
@@ -190,10 +190,88 @@ nav {
     height: 200px;
     width: 200px;
     object-fit: cover;
-    margin-bottom: 10px;
+    margin: 5% 0;
 }
 .item-container button {
-
+    margin: 3%;
 }
 
 
+@media only screen and (min-width: 620px) {
+    .welcomeBox {
+        width: 50%;
+        margin: 5% 25% 0 25%;
+        padding: 10px;
+    }
+    nav {
+        width: 50%;
+        margin: 0 25%;
+    }
+    .photo-container img {
+        height: 200px;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+    .item-container {
+        height: 100%;
+        border: 1px solid rgb(248, 248, 248);
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        background-color: #fefefe;
+        border-radius: 10px;
+    }
+    #items-grid {
+        display: grid;
+        width: 90%;
+        margin: 5%;
+        grid-template-rows: repeat(2, auto);
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    .item-container {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .welcomeBox {
+        width: 40%;
+        margin: 2.5% 30% 0 30%;
+        padding: 10px;
+    }
+    nav {
+        width: 30%;
+        margin: 0 25%;
+    }
+    .photo-container {
+        padding: 0;
+        margin-top: 2.5%;
+    }
+    .photo-container img {
+        height: 400px;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+    .text-block {
+        margin-top: 5%;
+    }
+    .text-block > * {
+        margin: 0;
+    }
+    #items-grid {
+        display: grid;
+        width: 80%;
+        margin: 5% 10%;
+        grid-template-rows: repeat(2, auto);
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+    .item-container {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+}
