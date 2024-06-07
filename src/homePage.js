@@ -1,5 +1,6 @@
 import Beans from "./images/beans.jpg";
 import header from "./header";
+import menuPage from "./menuPage";
 
 function homePage() {
     header(); // Call the header function to initialize the header
@@ -15,6 +16,9 @@ function homePage() {
     heading.classList.add('h1-theme');
     heading.innerText = "Welcome to Upland.";
     welcomeBox.appendChild(heading);
+    const introPara = document.createElement('p');
+    introPara.textContent = "Explore our selection of coffees by using the tabs above.";
+    welcomeBox.appendChild(introPara);
 
     // Add a photo to the home page
     const photoOneContainer = document.createElement('div');
@@ -22,17 +26,23 @@ function homePage() {
     const homePhoto = new Image();
     homePhoto.src = Beans;
     photoOneContainer.appendChild(homePhoto);
+    photoOneContainer.style.position = 'relative';
     content.appendChild(photoOneContainer);
+    const exploreMore = document.createElement('h4');
+    exploreMore.textContent = 'Explore now.';
+    photoOneContainer.appendChild(exploreMore);
+    exploreMore.style.position = 'absolute';
+    exploreMore.style.top = '40%';
+    exploreMore.style.color = '#f2f2f2';
 
-    const textBlock = document.createElement('div');
-    textBlock.classList.add('text-block');
-    photoOneContainer.appendChild(textBlock);
-    const subHeading = document.createElement('h2');
-    subHeading.textContent = "We're glad you're here.";
-    textBlock.appendChild(subHeading);
-    const introPara = document.createElement('p');
-    introPara.textContent = "Explore our selection of coffees by using the tabs above.";
-    textBlock.appendChild(introPara);
+    const removeDOM = () => {
+        content.innerHTML = ``;
+    }
+
+    photoOneContainer.addEventListener('click', () => {
+        removeDOM();
+        menuPage();
+    });
 }
 
 export default homePage;
